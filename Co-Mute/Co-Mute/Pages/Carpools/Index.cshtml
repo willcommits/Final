@@ -1,0 +1,90 @@
+﻿@page
+@model Co_Mute.Pages.Carpools.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].PoolID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].ExpectedArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].DaysAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].AvailableSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].Owner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carpool[0].User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Carpool) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoolID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpectedArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DaysAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CarpoolID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CarpoolID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CarpoolID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

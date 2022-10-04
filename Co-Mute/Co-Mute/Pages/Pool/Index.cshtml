@@ -1,0 +1,42 @@
+﻿@page
+@model Co_Mute.Pages.Pool.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailablePool[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailablePool[0].LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AvailablePool) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AvailablePoolId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AvailablePoolId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AvailablePoolId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

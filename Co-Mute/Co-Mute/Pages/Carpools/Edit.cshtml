@@ -1,0 +1,80 @@
+﻿@page
+@model Co_Mute.Pages.Carpools.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Carpool</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Carpool.CarpoolID" />
+            <div class="form-group">
+                <label asp-for="Carpool.UserID" class="control-label"></label>
+                <select asp-for="Carpool.UserID" class="form-control" asp-items="ViewBag.UserID"></select>
+                <span asp-validation-for="Carpool.UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.PoolID" class="control-label"></label>
+                <input asp-for="Carpool.PoolID" class="form-control" />
+                <span asp-validation-for="Carpool.PoolID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.DepartureTime" class="control-label"></label>
+                <input asp-for="Carpool.DepartureTime" class="form-control" />
+                <span asp-validation-for="Carpool.DepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.ExpectedArrivalTime" class="control-label"></label>
+                <input asp-for="Carpool.ExpectedArrivalTime" class="form-control" />
+                <span asp-validation-for="Carpool.ExpectedArrivalTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.Origin" class="control-label"></label>
+                <input asp-for="Carpool.Origin" class="form-control" />
+                <span asp-validation-for="Carpool.Origin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.DaysAvailable" class="control-label"></label>
+                <input asp-for="Carpool.DaysAvailable" class="form-control" />
+                <span asp-validation-for="Carpool.DaysAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.Destination" class="control-label"></label>
+                <input asp-for="Carpool.Destination" class="form-control" />
+                <span asp-validation-for="Carpool.Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.AvailableSeats" class="control-label"></label>
+                <input asp-for="Carpool.AvailableSeats" class="form-control" />
+                <span asp-validation-for="Carpool.AvailableSeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.Owner" class="control-label"></label>
+                <input asp-for="Carpool.Owner" class="form-control" />
+                <span asp-validation-for="Carpool.Owner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carpool.Notes" class="control-label"></label>
+                <textarea asp-for="Carpool.Notes" class="form-control"></textarea>
+                <span asp-validation-for="Carpool.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

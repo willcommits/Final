@@ -1,0 +1,79 @@
+﻿@page
+@model Co_Mute.Pages.Carpools.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Carpool</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.PoolID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.PoolID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.DepartureTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.DepartureTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.ExpectedArrivalTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.ExpectedArrivalTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.Origin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.Origin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.DaysAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.DaysAvailable)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.Destination)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.Destination)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.AvailableSeats)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.AvailableSeats)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.Owner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.Owner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Carpool.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Carpool.User.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Carpool?.CarpoolID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

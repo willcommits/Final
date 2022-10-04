@@ -1,0 +1,83 @@
+﻿@page
+@model Co_Mute.Pages.Users.DetailsModel
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="font-size:26px;font-weight:800;color:cornflowerblue;letter-spacing:5px;">Profile</h1>
+|
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Email)
+        </dd>
+        <a asp-page="./Edit" asp-route-id="@Model.Users.ID">Edit User Details</a>
+        <h1 style="font-size:18px;font-weight:800;letter-spacing:3px;">Car Pools Registered</h1>
+
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Departure Time</th>
+                    <th>Expected Arrival Time</th>
+                    <th>Owner</th>
+                    <th>Notes</th>
+                </tr>
+                @foreach (var item in Model.Users.Carpools)
+                {
+                    <tr>
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Origin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Destination)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DepartureTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpectedArrivalTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Owner)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Notes)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Users?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
